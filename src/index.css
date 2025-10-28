@@ -1,7 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
 @custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url(./assets/fonts/RedHatText-VariableFont_wght.ttf) format("truetype"); 
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap; 
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -40,6 +47,8 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-green: var(--clr-green);
+
+  --font-sans: "Red Hat Text", sans-serif;
 }
 
 :root {
@@ -83,4 +92,34 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+.text-present-1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.text-present-2 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: bold;
+}
+
+.text-present-3 {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.text-present-4 {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  
+}
+.text-present-4-bold {
+ font-size: 0.85rem;
+  line-height: 1.5;
+  font-weight: 600;
 }
