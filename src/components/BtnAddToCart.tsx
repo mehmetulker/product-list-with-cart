@@ -1,9 +1,16 @@
+import { useCartStore } from "@/store/cart";
 import { Button } from "./ui/button";
+import type { Dessert } from "@/type/products";
+type BtnAddToCartProps = {
+  product: Dessert;
+};
 
-function BtnAddToCart() {
+function BtnAddToCart({ product }: BtnAddToCartProps) {
+  const { addToCart } = useCartStore();
   return (
     <div>
       <Button
+        onClick={() => addToCart(product)}
         variant={"outline"}
         size={"lg"}
         className="bg-white text-prest-4-bold has-[>svg]:px-7 has-[>svg]:py-3 hover:border-primary hover:bg-white hover:text-primary  "

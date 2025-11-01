@@ -1,9 +1,21 @@
+import { useCartStore } from "@/store/cart";
 import { Button } from "./ui/button";
+import type { Dessert } from "@/type/products";
 
-function BtnDecrementIncrement() {
+type ProductsProps = {
+  product: Dessert;
+};
+
+function BtnDecrementIncrement({ product }: ProductsProps) {
+  const {
+    decrementQuantity,
+    addToCart: incrementQuantity,
+    getProductQuantity,
+  } = useCartStore();
   return (
     <div className="bg-primary rounded-full py-3 px-7 flex items-center justify-between min-w-40">
       <Button
+        onClick={() => decrementQuantity(product.name)}
         size={"icon"}
         className="size-5 border border-white rounded-full group hover:bg-white"
         aria-label="decrement quantity"
@@ -24,9 +36,10 @@ function BtnDecrementIncrement() {
         </svg>
       </Button>
       <span className="text-preset-4-bold text-white" aria-label="quantity">
-        1
+        {getProductQuantity(product.name)}
       </span>
       <Button
+        onClick={() => incrementQuantity(product)}
         size={"icon"}
         className="size-5 border border-white rounded-full group hover:bg-white"
         aria-label="increment quantity"
