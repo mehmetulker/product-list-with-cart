@@ -6,9 +6,11 @@ import CartEmpty from "./components/CartEmpty";
 import CartItems from "./components/CartItems";
 import ProductItem from "./components/ProductItem";
 import { type Dessert } from "./type/products";
+import { useCartStore } from "./store/cart";
 
 function App() {
   const [products, setProduct] = useState<Dessert[]>([]);
+  const { cartItems } = useCartStore();
 
   useEffect(() => {
     async function fetchData() {
@@ -29,10 +31,7 @@ function App() {
             ))}
           </Products>
 
-          <Cart>
-            {/* <CartEmpty /> */}
-            <CartItems />
-          </Cart>
+          <Cart>{cartItems.length > 0 ? <CartItems /> : <CartEmpty />}</Cart>
         </div>
       </Container>
     </main>
