@@ -1,3 +1,4 @@
+import { useCartStore } from "@/store/cart";
 import TableOrder from "./TableOrder";
 import { Button } from "./ui/button";
 
@@ -13,6 +14,7 @@ import {
 import OrderConfirmedIcon from "@/assets/images/icon-order-confirmed.svg";
 
 function DialogConfirmation() {
+  const { clearCart } = useCartStore();
   return (
     <div className="w-full py-4">
       <Dialog>
@@ -41,7 +43,7 @@ function DialogConfirmation() {
           </DialogHeader>
           <TableOrder />
           <DialogFooter>
-            <Button size={"lg"} className="py-4 w-full">
+            <Button size={"lg"} className="py-4 w-full" onClick={clearCart}>
               Start New Order
             </Button>
           </DialogFooter>

@@ -1,14 +1,16 @@
+import { useCartStore } from "@/store/cart";
 import BtnAddToCart from "./BtnAddToCart";
 import BtnDecrementIncrement from "./BtnDecrementIncrement";
 import type { Dessert } from "@/type/products";
-
-const quality = 0;
 
 type ProductsProps = {
   product: Dessert;
 };
 
 function ProductItem({ product }: ProductsProps) {
+  const { cartItems } = useCartStore();
+  const quantity =
+    cartItems.find((item) => item.name === product.name)?.quantity ?? 0;
   return (
     <div>
       <article key={product.name}>
@@ -29,13 +31,19 @@ function ProductItem({ product }: ProductsProps) {
             <img
               src={product.image.mobile}
               alt={product.name}
-              className="w-full h-auto mb-4 rounded-xl"
+              className={`w-full h-auto mb-4 rounded-xl ${
+                quantity > 0 ? "outline outline-3 outline-primary" : ""
+              }`}
               width={654}
               height={424}
             />
           </picture>
           <div className="absolute bottom-0 right-1/2 translate-x-1/2 translate-y-1/2">
-            {quality > 0 ? <BtnDecrementIncrement /> : <BtnAddToCart />}
+            {quantity > 0 ? (
+              <BtnDecrementIncrement product={product} />
+            ) : (
+              <BtnAddToCart product={product} />
+            )}
           </div>
         </div>
         <p className="text-preset-4 text-muted">{product.category}</p>
