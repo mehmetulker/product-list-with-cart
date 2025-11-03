@@ -9,7 +9,6 @@ function TableOrder() {
             const qty = item.quantity ?? 1;
             const price = Number(item.price ?? 0);
             const itemTotal = (qty * price).toFixed(2);
-            const key = item.name;
 
             return (
               <tr

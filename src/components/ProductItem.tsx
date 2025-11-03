@@ -32,7 +32,7 @@ function ProductItem({ product }: ProductsProps) {
               src={product.image.mobile}
               alt={product.name}
               className={`w-full h-auto mb-4 rounded-xl ${
-                quantity > 0 ? "outline outline-3 outline-primary" : ""
+                quantity > 0 ? "outline-3 outline-primary" : ""
               }`}
               width={654}
               height={424}
