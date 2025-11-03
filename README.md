@@ -125,7 +125,7 @@ Contributions are welcome! Open an issue to discuss ideas or submit a pull reque
 
 ## License
 
-License information has not been provided yet. Please reach out before using this code in production.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
