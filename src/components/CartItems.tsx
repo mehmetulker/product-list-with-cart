@@ -1,14 +1,5 @@
 import { CardAction, CardContent, CardFooter } from "./ui/card";
 import { Button } from "./ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "./ui/dialog";
-
 import CarbonNeutralIcon from "@/assets/images/icon-order-confirmed.svg";
 import DialogConfirmation from "./DialogConfirmation";
 import { useCartStore } from "@/store/cart";

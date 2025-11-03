@@ -1,5 +1,3 @@
-import { useStore } from "zustand";
-import CartEmpty from "./CartEmpty";
 import { Card, CardHeader, CardTitle } from "./ui/card";
 import { useCartStore } from "@/store/cart";
 
@@ -15,7 +13,7 @@ function Cart({ children }: { children: React.ReactNode }) {
             </h2>
           </CardTitle>
         </CardHeader>
-        {children}
+        {children}{" "}
       </Card>
     </div>
   );

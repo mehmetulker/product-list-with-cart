@@ -1,5 +1,5 @@
 interface ContainerProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 const Container = ({ children }: ContainerProps) => {

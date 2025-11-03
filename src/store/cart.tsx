@@ -1,4 +1,3 @@
-import CartItems from "@/components/CartItems";
 import type { Dessert } from "@/type/products";
 import { create } from "zustand";
 

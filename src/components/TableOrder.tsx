@@ -1,9 +1,6 @@
 import { useCartStore } from "@/store/cart";
-import { Key } from "lucide-react";
-import React from "react";
-
 function TableOrder() {
-  const { cartItems, removeFromCart, getOrderTotal } = useCartStore();
+  const { cartItems, getOrderTotal } = useCartStore();
   return (
     <>
       <table className="bg-(--clr-rose-50) rounded-lg">
