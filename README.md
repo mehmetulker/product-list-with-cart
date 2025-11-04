@@ -4,7 +4,13 @@ A fully responsive dessert ordering interface coded straight from the Frontend M
 
 ---
 
-**Live Demo:** [https://product-list-with-carts.netlify.app/](https://product-list-with-carts.netlify.app/)
+## Live Demo
+
+Explore the responsive experience at the [live demo](https://product-list-with-carts.netlify.app/).
+
+## Repository
+
+Clone or fork the code from the [GitHub repository](https://github.com/mehmetulker/product-list-with-cart.git).
 
 ---
 
